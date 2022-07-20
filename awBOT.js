@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name BcGod_AwBot
 // @description AwBot
-// @version 1.05r
+// @version 1.06r
 // @namespace awaqwq_huzpsb
 // @match *://*/*BondageClub*
 // @grant GM_registerMenuCommand
@@ -79,14 +79,14 @@
                     Type: 'Chat'
                 });
             }
+            //Process the gag in my way.
+            let NS = CD;
+            let GagEffect = SpeechGetTotalGagLevel(C, NoDeaf);
+            if (GagEffect > 0) {
+                NS = 'GAG lv' + GagEffect + ' ' + NS;
+            }
+            return NS;
         }
-        //Process the gag in my way.
-        let NS = CD;
-        let GagEffect = SpeechGetTotalGagLevel(C, NoDeaf);
-        if (GagEffect > 0) {
-            NS = 'GAG lv' + GagEffect + ' ' + NS;
-        }
-        return NS;
     }
     );
 }
